@@ -34,27 +34,23 @@
          return;
       }
 
-      //¥　while文作成========================
-
-      let i = 1;
       let j = 1;
 
-      //Fizz Buzz FizzBuzzのアウトプット
-      while (i * FizzNumInput <= 99 || j * BuzzNumInput <= 99 || i <= 99) {
+      for (let i = 1; i < 100; i++) {
+         // fizzbuzz の処理
          let Li = document.createElement('li'); //Fizz用のliを生成
-         if (i * FizzNumInput < j * BuzzNumInput) {
-            Li.textContent = `Fizz ${i * FizzNumInput}`;
+         //入力値がかぶらないパターン
+         if (i % FizzNumInput === 0 && i % BuzzNumInput === 0) {
+            Li.textContent = `FizzBuzz ${i}`;
             ul.appendChild(Li);
-            i++;
-         } else if (j * BuzzNumInput < i * FizzNumInput) {
-            Li.textContent = `Buzz ${j * BuzzNumInput}`;
+            //FizzNumInputが倍数のパターン
+         } else if (i % FizzNumInput === 0) {
+            Li.textContent = `Fizz ${i}`;
             ul.appendChild(Li);
-            j++;
-         } else {
-            Li.textContent = `FizzBuzz ${i * FizzNumInput}`;
+            //BuzzNumInputが倍数のパターン
+         } else if (i % BuzzNumInput === 0) {
+            Li.textContent = `Buzz ${i}`;
             ul.appendChild(Li);
-            i++;
-            j++;
          }
       }
    });
