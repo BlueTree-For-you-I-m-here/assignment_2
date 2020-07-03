@@ -1,2 +1,5 @@
 *.json
 *copy*
+*pics
+.prettierrc
+*.zip
